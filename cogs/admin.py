@@ -57,34 +57,23 @@ class Admin(commands.Cog):
     async def about(self, interaction: Interaction) -> None:
         """ Shows basic information about the bot. """
         
-        owner_url = f'https://discord.com/users/240059262297047041'
+        owner_url = f'https://discord.com/users/860963848701739028'
         github_project = 'https://github.com/staciax/Valorant-DiscordBot'
         support_url = 'https://discord.gg/FJSXPqQZgz'
         
         embed = discord.Embed(color=0xffffff)
-        embed.set_author(name='ᴠᴀʟᴏʀᴀɴᴛ ʙᴏᴛ ᴘʀᴏᴊᴇᴄᴛ', url=github_project)
+        embed.set_author(name='ValoBot V2.0 by rh')
         embed.set_thumbnail(url='https://i.imgur.com/ZtuNW0Z.png')
         embed.add_field(
-            name='ᴅᴇᴠᴇʟᴏᴘᴇʀ:',
-            value=f"[ꜱᴛᴀᴄɪᴀ.#7475]({owner_url})",
+            name='Developper:',
+            value=f"[rh#2723]({owner_url})",
             inline=False
         )
-        embed.add_field(
-            name='ᴄᴏɴᴛʀɪʙᴜᴛᴏʀꜱ:',
-            value=f"[kiznick](https://github.com/kiznick)\n"
-                  "[KANATAISGOD](https://github.com/KANATAISGOD)\n"
-                  "[TMADZ2007](https://github.com/KANATAISGOD')\n"
-                  "[sevzin](https://github.com/sevzin)\n"
-                  "[miigoxyz](https://github.com/miigoxyz)\n"
-                  "[Connor](https://github.com/ConnorDoesDev)\n"
-                  "[KohanaSann](https://github.com/KohanaSann)\n"
-                  "[RyugaXhypeR](https://github.com/RyugaXhypeR)\n",
-            inline=False
-        )
+        
         view = ui.View()
-        view.add_item(ui.Button(label='ɢɪᴛʜᴜʙ', url=github_project, row=0))
-        view.add_item(ui.Button(label='ᴋᴏ-ꜰɪ', url='https://ko-fi.com/staciax', row=0))
-        view.add_item(ui.Button(label='ꜱᴜᴘᴘᴏʀᴛ ꜱᴇʀᴠᴇʀ', url=support_url, row=0))
+        # view.add_item(ui.Button(label='ɢɪᴛʜᴜʙ', url=github_project, row=0))
+        # view.add_item(ui.Button(label='ᴋᴏ-ꜰɪ', url='https://ko-fi.com/staciax', row=0))
+        # view.add_item(ui.Button(label='ꜱᴜᴘᴘᴏʀᴛ ꜱᴇʀᴠᴇʀ', url=support_url, row=0))
         
         await interaction.response.send_message(embed=embed, view=view)
 
