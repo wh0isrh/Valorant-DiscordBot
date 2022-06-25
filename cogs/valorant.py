@@ -82,13 +82,14 @@ class ValorantCog(commands.Cog, name='Valorant'):
     @app_commands.describe(username='Input username', password='Input password')
     # @dynamic_cooldown(cooldown_5s)
     async def login(self, interaction: Interaction, username: str, password: str) -> None:
-        
+        print("username, password")
         response = ResponseLanguage(interaction.command.name, interaction.locale)
         
         user_id = interaction.user.id
         auth = self.db.auth
         auth.locale_code = interaction.locale
         authenticate = await auth.authenticate(username, password)
+        print(username, password)
         
         if authenticate['auth'] == 'response':
             await interaction.response.defer(ephemeral=True)
